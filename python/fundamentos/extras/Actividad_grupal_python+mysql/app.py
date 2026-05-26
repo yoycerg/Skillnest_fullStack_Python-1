@@ -56,50 +56,55 @@ def mostrar_usuarios(usuarios):
         print(usuario.mostrar_datos())
 
 
-if __name__ == "__main__":
-    usuarios = [
-        Usuario(1, "Camila Torres", "camila@correo.com"),
-        Usuario(2, "Claudia Pina", "claudia@correo.com")
-    ]
+usuario1 = Usuario(1, "Camila Torres", "camila@correo.com")
+usuario2 = Usuario(2, "Claudia Pina", "claudia@correo.com")
 
-    libros = [
-        Libro(1, "Python desde cero", "Ana Perez"),
-        Libro(2, "humpty dumpty", "joshua cortejo")
-    ]
+usuarios = []
+usuarios.append(usuario1)
+usuarios.append(usuario2)
 
-    prestamos = [
-        Prestamo(1, usuarios[0], libros[0]),
-        Prestamo(2, usuarios[1], libros[1])
-    ]
+libro1 = Libro(1, "Python desde cero", "Ana Perez")
+libro2 = Libro(2, "humpty dumpty", "joshua cortejo")
 
-    while True:
-        print("\nMenu de Biblioteca")
-        print("1. Mostrar datos de usuarios")
-        print("2. Mostrar informacion de libros")
-        print("3. Registrar prestamos")
-        print("4. Devolver libros")
-        print("5. Salir")
+libros = []
+libros.append(libro1)
+libros.append(libro2)
 
-        opcion = input("Seleccione una opcion: ")
+prestamo1 = Prestamo(1, usuario1, libro1)
+prestamo2 = Prestamo(2, usuario2, libro2)
 
-        if opcion == "1":
-            mostrar_usuarios(usuarios)
+prestamos = []
+prestamos.append(prestamo1)
+prestamos.append(prestamo2)
 
-        elif opcion == "2":
-            for libro in libros:
-                print(libro.mostrar_informacion())
+while True:
+    print("\nMenu de Biblioteca")
+    print("1. Mostrar datos de usuarios")
+    print("2. Mostrar informacion de libros")
+    print("3. Registrar prestamos")
+    print("4. Devolver libros")
+    print("5. Salir")
 
-        elif opcion == "3":
-            for prestamo in prestamos:
-                print(prestamo.registrar_prestamo())
+    opcion = input("Seleccione una opcion: ")
 
-        elif opcion == "4":
-            for prestamo in prestamos:
-                print(prestamo.devolver_libro())
+    if opcion == "1":
+        mostrar_usuarios(usuarios)
 
-        elif opcion == "5":
-            print("Saliendo del programa...")
-            break
+    elif opcion == "2":
+        for libro in libros:
+            print(libro.mostrar_informacion())
 
-        else:
-            print("Opcion no valida, por favor intente de nuevo.")
+    elif opcion == "3":
+        for prestamo in prestamos:
+            print(prestamo.registrar_prestamo())
+
+    elif opcion == "4":
+        for prestamo in prestamos:
+            print(prestamo.devolver_libro())
+
+    elif opcion == "5":
+        print("Saliendo del programa...")
+        break
+
+    else:
+        print("Opcion no valida, por favor intente de nuevo.")
