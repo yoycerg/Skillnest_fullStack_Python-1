@@ -125,10 +125,10 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 USE sistema_libreria;
 
 -- INGRESAR ROLES
-INSERT INTO roles(nombre_rol, descripcion_rol, created_by, deleted)
-VALUES ("administrador", "Control total del sistema", 1, 0),
-("bibliotecario", "Puede gestionar libros y prestamos", 1, 0),
-("lector", "Puede solicitar libros prestados", 1, 0);
+INSERT INTO roles(nombre_rol, descripcion_rol, created_at, created_by, deleted)
+VALUES ("administrador", "Control total del sistema", NOW(), 1, 0),
+("bibliotecario", "Puede gestionar libros y prestamos", NOW(), 1, 0),
+("lector", "Puede solicitar libros prestados", NOW(), 1, 0);
 
 -- MOSTRAR ROLES
 SELECT * FROM roles;
@@ -195,7 +195,7 @@ UPDATE Usuario
 SET deleted = 1
 WHERE id_usuario = 2;
 
--- MOSTRAR USUARIOSZº
+-- MOSTRAR USUARIOS
 SELECT nombre, correo, deleted
 FROM Usuario;
 
