@@ -8,7 +8,7 @@ class Conexion:
         conexion = mysql.connector.connect(
             host="localhost",
             user="root",
-            password="poppy",
+            password="123456",
             database="tienda_videojuegos"
         )
 
